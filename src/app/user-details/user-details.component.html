@@ -1,0 +1,56 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{personDetail.firstName}} {{personDetail.lastName}}</mat-card-title>
+        <mat-card-subtitle>{{personDetail.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="example-header-image-right">
+        <img [src]="imageSrc" alt="" class="image-style">
+    </div>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <div matLine>
+                    Weight :
+                    <button mat-button>{{personDetail.weight}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Height :
+                    <button mat-button>{{personDetail.height}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    BMI :
+                    <button mat-button>{{personDetail.bmi}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Training Require :
+                    <button mat-button>{{personDetail.isTrainerRequire}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Has Been Gym Before :
+                    <button mat-button>{{personDetail.hasBeenToGym}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div matLine>
+                    Goals :
+                    <button mat-button>
+                        <mat-chip-listbox>
+                            <ng-container *ngFor="let row of personDetail.motivations">
+                                <mat-chip-option selected>{{row}}</mat-chip-option>
+                            </ng-container>
+                        </mat-chip-listbox>
+                    </button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
